@@ -1,17 +1,3 @@
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  server: {
-    proxy: {
-      // Proxy all /api/chem requests to the chemistry API server
-      '/api/chem': {
-        target: 'http://10.0.0.149:8000',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/chem/, ''),
-      },
-    },
-  },
-});
 // vite.config.js
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue' // 若用Vue则保留，纯HTML则删除
